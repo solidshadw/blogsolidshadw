@@ -11,7 +11,7 @@ import { spectreDark } from './src/ec-theme';
 
 // https://astro.build/config
 const config = defineConfig({
-  site: 'https://blog.solidshadw.com',
+  site: 'https://blog.solidshadw1.workers.dev',
   output: 'static',
   integrations: [
     expressiveCode({
