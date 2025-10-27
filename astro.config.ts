@@ -26,8 +26,8 @@ const config = defineConfig({
           title: 'solidshadw',
           description: 'weaponizing my curiosity'
         },
-        blog: {
-          title: 'Blog',
+        posts: {
+          title: 'Posts',
           description: 'Jotting down my thoughts'
         },
         projects: {
