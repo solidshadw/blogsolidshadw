@@ -3,37 +3,182 @@ import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout
-  title={"404"}
-  description={"This page could not be found."}
+  title={"404 - Page Not Found"}
+  description={"The page you're looking for has been compromised or doesn't exist."}
 	pagefindIgnore
 >
   <div class="notfound-container" slot="404">
-    <h1 class="text-glow">404</h1>
-    <p>This page could not be found.</p>
-    <a class="block-link" href="/">← Back to the homepage</a>
+    <div class="error-code">
+      <span class="error-number">4</span>
+      <span class="error-icon">🔒</span>
+      <span class="error-number">4</span>
+    </div>
+    
+    <h1 class="text-glow">ACCESS DENIED</h1>
+    
+    <div class="error-message">
+      <p>The page you're looking for has been <span class="highlight">compromised</span> or doesn't exist.</p>
+      <p>Either the target has been <span class="highlight">patched</span> or you're using the wrong <span class="highlight">payload</span>.</p>
+    </div>
+    
+    <div class="suggestions">
+      <h3>Possible Solutions:</h3>
+      <ul>
+        <li>Check your <span class="code">URL</span> for typos</li>
+        <li>Try a different <span class="code">attack vector</span></li>
+        <li>Return to the <span class="code">homepage</span> and start over</li>
+        <li>Check if the page has been <span class="code">moved</span></li>
+      </ul>
+    </div>
+    
+    <div class="actions">
+      <a class="block-link" href="/">🏠 Return to Base</a>
+      <a class="block-link" href="/blog">📝 Browse Blog Posts</a>
+    </div>
+    
+    <div class="terminal-output">
+      <code>$ curl -I {Astro.url.pathname}</code><br>
+      <code>HTTP/1.1 404 Not Found</code><br>
+      <code>X-Status: Target Not Found</code><br>
+      <code>X-Suggestion: Try /blog/ instead</code>
+    </div>
   </div>
 </Layout>
+
 <style>
   .notfound-container {
     display: flex;
-    height: 80vh;
+    min-height: 80vh;
     justify-content: center;
     align-items: center;
     width: 100%;
     text-align: center;
     flex-direction: column;
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  .error-code {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 6rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  .error-number {
+    color: var(--primary);
+    text-shadow: 0 0 20px var(--primary);
+  }
+
+  .error-icon {
+    font-size: 4rem;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
   }
 
   .notfound-container h1 {
-    font-size: 4rem;
+    font-size: 3rem;
+    margin: 0;
+    color: #ff6b6b;
+  }
+
+  .error-message {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .error-message p {
+    font-size: 1.25em;
+    margin: 0.5rem 0;
+    line-height: 1.6;
+  }
+
+  .highlight {
+    color: var(--primary);
+    font-weight: bold;
+  }
+
+  .suggestions {
+    background: rgba(var(--primary-rgb), 0.1);
+    border: 1px solid var(--primary);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .suggestions h3 {
+    margin: 0 0 1rem 0;
+    color: var(--primary);
+  }
+
+  .suggestions ul {
+    list-style: none;
+    padding: 0;
     margin: 0;
   }
 
-  .notfound-container p {
-    font-size: 1.25em;
+  .suggestions li {
+    margin: 0.5rem 0;
+    padding: 0.25rem 0;
   }
 
-  .block-link {
+  .code {
+    background: rgba(var(--primary-rgb), 0.2);
+    padding: 0.125rem 0.375rem;
+    border-radius: 0.25rem;
+    font-family: 'Geist Mono', monospace;
+    font-size: 0.9em;
+  }
+
+  .actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .terminal-output {
+    background: #0a0a0a;
+    border: 1px solid #333;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    font-family: 'Geist Mono', monospace;
+    font-size: 0.9em;
+    color: #00ff00;
+    max-width: 400px;
+    text-align: left;
     margin-top: 1rem;
+  }
+
+  .terminal-output code {
+    background: none;
+    color: inherit;
+    padding: 0;
+  }
+
+  @media screen and (max-width: 640px) {
+    .error-code {
+      font-size: 4rem;
+    }
+    
+    .error-icon {
+      font-size: 3rem;
+    }
+    
+    .notfound-container h1 {
+      font-size: 2rem;
+    }
+    
+    .actions {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 </style>
