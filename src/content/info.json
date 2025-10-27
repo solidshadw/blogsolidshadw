@@ -3,17 +3,18 @@
     "id": 1,
     "icon": {
       "type": "lucide",
-      "name": "cake"
+      "name": "bug"
     },
-    "text": "1 year old"
+    "text": "Squashing bugs since 2018"
   },
   {
     "id": 2,
     "icon": {
       "type": "lucide",
-      "name": "earth"
+      "name": "twitter"
     },
     "type": "lucide",
-    "text": "Made in Germany"
+    "text": "@solidshadw",
+    "link": "https://x.com/solidshadw"
   }
 ]
