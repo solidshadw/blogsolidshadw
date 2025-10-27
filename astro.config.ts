@@ -20,7 +20,7 @@ const config = defineConfig({
     mdx(),
     sitemap(),
     spectre({
-      name: 'Spectre',
+      name: 'solidshadw',
       openGraph: {
         home: {
           title: 'solidshadw',
