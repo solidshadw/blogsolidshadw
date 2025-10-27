@@ -6,6 +6,7 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import spectre from './package/src';
 
+import node from '@astrojs/node';
 import { spectreDark } from './src/ec-theme';
 
 // https://astro.build/config
@@ -25,7 +26,7 @@ const config = defineConfig({
           title: 'solidshadw',
           description: 'weaponizing my curiosity'
         },
-        posts: {
+        blog: {
           title: 'Posts',
           description: 'Jotting down my thoughts'
         },
