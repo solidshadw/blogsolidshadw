@@ -18,15 +18,16 @@ article hr {
 }
 
 p:has(img) {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
 p img {
   max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
 .toc-card {
@@ -208,4 +209,18 @@ table tbody tr {
 
 table tbody tr td {
   padding: .5rem 1.5rem .5rem 0;
+}
+
+/* Improved image handling */
+article img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+  border-radius: 0.25rem;
+}
+
+article img:not(p img) {
+  width: 100%;
+  object-fit: contain;
 }
