@@ -10,9 +10,6 @@ tags:
 draft: false
 ---
 
-### Easy Box
-
-
 | Name | Sau|
 | :------ |:--- |
 | OS | Linux |
@@ -24,7 +21,7 @@ draft: false
 ## Port Scan
 I actually wanted to test Naabu as my scanner of choice to be able to enumerate the host. I just Naabu to scan all of the ports and Naabu has a feature to then pump the ports to nmap. This was my command and output.
 
-```sh
+```bash
 solidshadw@solidManjaro  ~/Downloads   
 $ sudo naabu -p - -host 10.10.11.224 -nmap-cli 'nmap -sV -oX nmap-outpu  
 t'
