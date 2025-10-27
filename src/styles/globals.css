@@ -1,7 +1,7 @@
 :root {
   --primary: #22333B;
   /* Needed for some hover effects. This is just the R, G and B values of the hex color above */
-  --primary-rgb: 140, 92, 245;
+  --primary-rgb: 34, 51, 59;
   /* Used for links */
   --primary-light: #EAE0D5;
   --primary-lightest: #C6AC8F;
