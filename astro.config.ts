@@ -23,12 +23,12 @@ const config = defineConfig({
       name: 'Spectre',
       openGraph: {
         home: {
-          title: 'Spectre',
-          description: 'A minimalistic theme for Astro.'
+          title: 'solidshadw',
+          description: 'weaponizing my curiosity'
         },
         blog: {
           title: 'Blog',
-          description: 'News and guides for Spectre.'
+          description: 'Jotting down my thoughts'
         },
         projects: {
           title: 'Projects'
