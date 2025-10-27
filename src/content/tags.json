@@ -1,5 +1,20 @@
 [
   {
     "id": "guide"
+  },
+  {
+    "id": "coding"
+  },
+  {
+    "id": "bash"
+  },
+  {
+    "id": "copilot"
+  },
+  {
+    "id": "cybersecurity"
+  },
+  {
+    "id": "rmccdc"
   }
 ]
