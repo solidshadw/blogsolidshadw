@@ -234,16 +234,27 @@ code:not(.astro-code code) {
   font-size: .925rem;
 }
 
+.article-header .glow-image {
+  width: 100%;
+  margin: -1.5rem -1.5rem 0 -1.5rem;
+  display: block;
+}
+
+.article-header .glow-image img {
+  width: 100% !important;
+  height: auto !important;
+  display: block;
+  object-fit: contain;
+  object-position: center;
+  max-height: 500px;
+}
+
 .article-image {
   width: 100%;
   height: auto;
-  min-height: 300px;
-  max-height: 500px;
   z-index: 1;
   margin: 0;
   display: block;
-  object-fit: cover;
-  object-position: center;
 }
 
 .end-of-article {
@@ -316,8 +327,12 @@ article img:not(p img) {
     width: 85%;
   }
   
-  .article-image {
-    width: 100%;
+  .article-header .glow-image {
+    margin: -1.5rem -1.5rem 0 -1.5rem;
+  }
+  
+  .article-header .glow-image img {
+    max-height: 400px;
   }
 }
 
@@ -330,10 +345,12 @@ article img:not(p img) {
     width: 95%;
   }
   
-  .article-image {
-    width: 100%;
-    min-height: 250px;
-    max-height: 400px;
+  .article-header .glow-image {
+    margin: -1.5rem -1.5rem 0 -1.5rem;
+  }
+  
+  .article-header .glow-image img {
+    max-height: 300px;
   }
   
   article h2 {
@@ -355,10 +372,12 @@ article img:not(p img) {
     width: 100%;
   }
   
-  .article-image {
-    width: 100%;
-    min-height: 200px;
-    max-height: 300px;
+  .article-header .glow-image {
+    margin: -1.5rem -1.5rem 0 -1.5rem;
+  }
+  
+  .article-header .glow-image img {
+    max-height: 250px;
   }
   
   article h2 {
