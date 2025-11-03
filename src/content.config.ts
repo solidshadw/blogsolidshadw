@@ -62,7 +62,7 @@ const posts = defineCollection({
     updatedAt: z.coerce.date().optional(),
     description: z.string(),
     tags: z.array(
-      reference("tags")
+      reference("tags")ß
     ),
     draft: z.boolean().optional().default(false),
     image: image(),
