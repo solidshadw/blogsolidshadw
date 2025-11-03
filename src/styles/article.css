@@ -263,14 +263,14 @@ code:not(.astro-code code) {
   margin: -1rem 0 0 0;  /* 👈 Move image UP/DOWN here */
   position: relative;
   overflow: hidden;
-  max-height: 400px;  /* 👈 Make image BIGGER/SMALLER here */
+  max-height: 500px;  /* 👈 Make image BIGGER/SMALLER here */
 }
 
 .article-header .glow-image img {
   width: 100% !important;
   max-width: none !important;
   height: auto !important;
-  max-height: 400px;  /* 👈 Match the max-height above */
+  max-height: 500px;  /* 👈 Match the max-height above */
   display: block;
   object-fit: cover;
   object-position: center 40%;  /* 👈 CENTER the visible portion here (40% from top) */
@@ -280,7 +280,7 @@ code:not(.astro-code code) {
 .article-header .glow-image .glow {
   width: 100% !important;
   max-width: none !important;
-  max-height: 400px;  /* 👈 Match the max-height above */
+  max-height: 500px;  /* 👈 Match the max-height above */
   height: auto !important;
   object-fit: cover;
   object-position: center 40%;  /* 👈 Match object-position above */
