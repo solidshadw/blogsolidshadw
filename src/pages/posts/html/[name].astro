@@ -1,0 +1,27 @@
+---
+import { readFile } from 'fs/promises';
+import { join } from 'path';
+
+interface Props {
+  name: string;
+}
+
+const { name } = Astro.params;
+
+// Read the HTML file from content/posts
+const htmlPath = join(process.cwd(), 'src/content/posts', `${name}.html`);
+
+let htmlContent: string;
+try {
+  htmlContent = await readFile(htmlPath, 'utf-8');
+} catch (error) {
+  return Astro.redirect('/404');
+}
+
+// Return raw HTML without any Astro processing
+return new Response(htmlContent, {
+  headers: {
+    'Content-Type': 'text/html; charset=utf-8',
+  },
+});
+---
