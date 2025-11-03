@@ -1,0 +1,164 @@
+---
+title: "InstallGoOffensive - Automated Go & Security Tools Installer"
+description: "A script that automates the installation of Go and a curated collection of offensive security tools, making it easy to set up your penetration testing environment"
+createdAt: 2025-01-20
+image: "../assets/golangoffensive.png"
+tags:
+  - automation
+  - tool
+  - go
+draft: false
+---
+
+Setting up a penetration testing environment can be tedious. You need to install Go, configure your PATH, and then manually install dozens of security tools one by one. This process is repetitive, error-prone, and time-consuming. That's why I created **InstallGoOffensive** - a bash script that automates the entire setup process.
+
+## The Problem
+
+As a security professional or penetration tester, you constantly need to:
+
+- Install and configure the latest version of Go
+- Install multiple Go-based security tools (nuclei, subfinder, ffuf, amass, etc.)
+- Manage tool updates across different systems
+- Ensure tools are available both in your home directory and system-wide
+- Deal with architecture-specific builds (AMD64 vs ARM64)
+
+Doing this manually for each new machine or VM setup is a pain. I needed a solution that would handle all of this automatically.
+
+## What InstallGoOffensive Does
+
+InstallGoOffensive is a comprehensive bash script that:
+
+### 1. Installs Go Automatically
+
+- **Architecture Detection**: Automatically detects your system architecture (AMD64 or ARM64)
+- **Latest Version**: Always installs the latest stable version of Go from the official website
+- **PATH Configuration**: Automatically adds Go to your PATH by updating `~/.bashrc` or `~/.zshrc`
+- **Idempotent**: Can be run multiple times without breaking or duplicating installations
+
+### 2. Installs 20+ Security Tools
+
+The script installs a curated collection of essential offensive security tools:
+
+| Tool | Purpose |
+|------|---------|
+| **nuclei** | Fast and customizable vulnerability scanner |
+| **subfinder** | Subdomain discovery tool |
+| **naabu** | Fast port scanner |
+| **gowitness** | Web screenshot utility |
+| **httpx** | HTTP toolkit for probing web servers |
+| **notify** | Notification utility for workflows |
+| **assetfinder** | Find domains and subdomains related to a given domain |
+| **waybackurls** | Fetch URLs from the Wayback Machine |
+| **gf** | Wrapper around grep for pattern matching |
+| **shortscan** | Security scanner for cloud services |
+| **anew** | Tool for adding lines to a file only if they don't already exist |
+| **simplehttpserver** | Simple HTTP server |
+| **ffuf** | Fast web fuzzer |
+| **amass** | Network mapping of attack surfaces and external asset discovery |
+| **cloudrecon** | Cloud infrastructure reconnaissance tool |
+| **gau** | Get All URLs |
+| **gospider** | Fast web spider |
+| **kerbrute** | Kerberos bruteforce utility |
+| **aws-enumerator** | AWS enumeration tool |
+| **gron** | Make JSON greppable |
+| **qsreplace** | Query string replacement utility |
+
+### 3. Smart Installation Strategy
+
+- **Dual Location**: Installs tools to both `$HOME/go/bin` and `/usr/local/bin`
+- **System-Wide Access**: Tools are available system-wide, not just for your user
+- **Error Handling**: Provides clear feedback on which tools succeeded and which failed
+- **Dependency Management**: Automatically installs required build dependencies
+
+## Key Features
+
+### Cross-Platform Support
+
+The script supports multiple Linux distributions:
+
+- **Debian-based**: Ubuntu, Kali Linux, Parrot OS, etc.
+- **Arch-based**: Arch Linux, BlackArch, etc.
+
+It automatically detects your distribution and installs the appropriate dependencies:
+
+- For Debian: `build-essential`, `libpcap-dev`
+- For Arch: `base-devel`
+
+### Architecture-Aware
+
+Whether you're on an Intel/AMD system (AMD64) or an Apple Silicon/M1/M2 system (ARM64), the script detects your architecture and downloads the correct Go binary.
+
+### Easy to Customize
+
+You can easily add more tools by adding lines to the script:
+
+```bash
+install_go_tool "tool_name" "github.com/author/repo" "binary_name"
+```
+
+## Usage
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/solidshadw/installgoofensive.git
+cd installgoofensive
+```
+
+2. Make the script executable:
+
+```bash
+chmod +x install-tool.sh
+```
+
+3. Run the script:
+
+```bash
+./install-tool.sh
+```
+
+The script will:
+- Detect your OS and architecture
+- Install Go (if not already installed)
+- Configure your PATH
+- Install all 20+ security tools
+- Provide a summary of successful/failed installations
+
+### Post-Installation
+
+After running the script, restart your shell or source your configuration:
+
+```bash
+source ~/.bashrc  # or ~/.zshrc if using zsh
+```
+
+You can then use any of the installed tools directly:
+
+```bash
+nuclei -version
+subfinder -version
+ffuf -V
+amass -version
+```
+
+## GitHub Repository
+
+The script is open source and available on GitHub:
+
+🔗 **[github.com/solidshadw/installgoofensive](https://github.com/solidshadw/installgoofensive)**
+
+You can fork it, customize the tool list, and contribute improvements. It's designed to be modular - add or remove tools as needed for your workflow.
+
+## What's Next
+
+The script is actively maintained and I'm always open to:
+
+- Adding more tools (if they're widely used)
+- Supporting more Linux distributions
+- Improving error handling and user feedback
+- Adding options for selective tool installation
+
+*Automate the setup, focus on the hacking.*
+
