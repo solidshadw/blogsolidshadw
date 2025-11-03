@@ -242,22 +242,28 @@ code:not(.astro-code code) {
   display: block;
   margin: 0;
   position: relative;
+  overflow: hidden;
+  max-height: 350px;
 }
 
 .article-header .glow-image img {
   width: 100% !important;
   max-width: none !important;
   height: auto !important;
+  max-height: 350px;
   display: block;
   object-fit: cover;
-  object-position: center;
-  min-height: 350px;
+  object-position: center top;
+  overflow: hidden;
 }
 
 .article-header .glow-image .glow {
   width: 100% !important;
   max-width: none !important;
+  max-height: 350px;
   height: auto !important;
+  object-fit: cover;
+  object-position: center top;
 }
 
 .article-image {
@@ -344,6 +350,18 @@ article img:not(p img) {
     margin-right: -1.5rem;
     margin-top: -1.5rem;
   }
+  
+  .article-header .glow-image {
+    max-height: 300px;
+  }
+  
+  .article-header .glow-image img {
+    max-height: 300px;
+  }
+  
+  .article-header .glow-image .glow {
+    max-height: 300px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -360,6 +378,18 @@ article img:not(p img) {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
     margin-top: -1.5rem;
+  }
+  
+  .article-header .glow-image {
+    max-height: 250px;
+  }
+  
+  .article-header .glow-image img {
+    max-height: 250px;
+  }
+  
+  .article-header .glow-image .glow {
+    max-height: 250px;
   }
   
   article h2 {
@@ -386,6 +416,18 @@ article img:not(p img) {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
     margin-top: -1.5rem;
+  }
+  
+  .article-header .glow-image {
+    max-height: 200px;
+  }
+  
+  .article-header .glow-image img {
+    max-height: 200px;
+  }
+  
+  .article-header .glow-image .glow {
+    max-height: 200px;
   }
   
   article h2 {
