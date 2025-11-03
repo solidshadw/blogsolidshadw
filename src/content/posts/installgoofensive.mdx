@@ -12,18 +12,6 @@ draft: false
 
 Setting up a penetration testing environment can be tedious. You need to install Go, configure your PATH, and then manually install dozens of security tools one by one. This process is repetitive, error-prone, and time-consuming. That's why I created **InstallGoOffensive** - a bash script that automates the entire setup process.
 
-## The Problem
-
-As a security professional or penetration tester, you constantly need to:
-
-- Install and configure the latest version of Go
-- Install multiple Go-based security tools (nuclei, subfinder, ffuf, amass, etc.)
-- Manage tool updates across different systems
-- Ensure tools are available both in your home directory and system-wide
-- Deal with architecture-specific builds (AMD64 vs ARM64)
-
-Doing this manually for each new machine or VM setup is a pain. I needed a solution that would handle all of this automatically.
-
 ## What InstallGoOffensive Does
 
 InstallGoOffensive is a comprehensive bash script that:
@@ -150,15 +138,6 @@ The script is open source and available on GitHub:
 🔗 **[github.com/solidshadw/installgoofensive](https://github.com/solidshadw/installgoofensive)**
 
 You can fork it, customize the tool list, and contribute improvements. It's designed to be modular - add or remove tools as needed for your workflow.
-
-## What's Next
-
-The script is actively maintained and I'm always open to:
-
-- Adding more tools (if they're widely used)
-- Supporting more Linux distributions
-- Improving error handling and user feedback
-- Adding options for selective tool installation
 
 *Automate the setup, focus on the hacking.*
 
