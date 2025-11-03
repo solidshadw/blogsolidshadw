@@ -173,9 +173,10 @@ ol li a.active {
   flex-direction: column;
   gap: .5rem;
   position: absolute;
-  bottom: 1.5rem;
+  top: 50%;
   left: 1.5rem;
   right: 1.5rem;
+  transform: translateY(-50%);
   max-width: none;
   z-index: 2;
 }
@@ -209,8 +210,10 @@ ol li a.active {
 @media screen and (max-width: 640px) {
   .header {
     position: relative;
-    bottom: 0;
+    top: auto;
     left: 0;
+    right: auto;
+    transform: none;
     width: fit-content;
     max-width: none;
     margin-top: 1rem;
