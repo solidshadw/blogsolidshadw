@@ -159,11 +159,13 @@ ol li a.active {
 
 .article-header {
   position: relative;
-  width: 100%;
+  width: calc(100% + 3rem);
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  margin-top: -1.5rem;
   height: fit-content;
   scroll-margin-top: 2rem;
   overflow: hidden;
-  border-radius: 0.5rem;
 }
 
 .header {
@@ -172,8 +174,9 @@ ol li a.active {
   gap: .5rem;
   position: absolute;
   bottom: 1.5rem;
-  left: 1rem;
-  max-width: calc(100% - 3rem);
+  left: 1.5rem;
+  right: 1.5rem;
+  max-width: none;
   z-index: 2;
 }
 
@@ -236,17 +239,25 @@ code:not(.astro-code code) {
 
 .article-header .glow-image {
   width: 100%;
-  margin: -1.5rem -1.5rem 0 -1.5rem;
   display: block;
+  margin: 0;
+  position: relative;
 }
 
 .article-header .glow-image img {
   width: 100% !important;
+  max-width: none !important;
   height: auto !important;
   display: block;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
-  max-height: 500px;
+  min-height: 350px;
+}
+
+.article-header .glow-image .glow {
+  width: 100% !important;
+  max-width: none !important;
+  height: auto !important;
 }
 
 .article-image {
@@ -327,12 +338,11 @@ article img:not(p img) {
     width: 85%;
   }
   
-  .article-header .glow-image {
-    margin: -1.5rem -1.5rem 0 -1.5rem;
-  }
-  
-  .article-header .glow-image img {
-    max-height: 400px;
+  .article-header {
+    width: calc(100% + 3rem);
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+    margin-top: -1.5rem;
   }
 }
 
@@ -345,12 +355,11 @@ article img:not(p img) {
     width: 95%;
   }
   
-  .article-header .glow-image {
-    margin: -1.5rem -1.5rem 0 -1.5rem;
-  }
-  
-  .article-header .glow-image img {
-    max-height: 300px;
+  .article-header {
+    width: calc(100% + 3rem);
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+    margin-top: -1.5rem;
   }
   
   article h2 {
@@ -372,12 +381,11 @@ article img:not(p img) {
     width: 100%;
   }
   
-  .article-header .glow-image {
-    margin: -1.5rem -1.5rem 0 -1.5rem;
-  }
-  
-  .article-header .glow-image img {
-    max-height: 250px;
+  .article-header {
+    width: calc(100% + 3rem);
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+    margin-top: -1.5rem;
   }
   
   article h2 {
