@@ -28,5 +28,14 @@
   },
   {
     "id": "nmap"
+  },
+  {
+    "id": "recon"
+  },
+  {
+    "id": "automation"
+  },
+  {
+    "id": "tool"
   }
 ]

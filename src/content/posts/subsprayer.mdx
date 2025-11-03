@@ -1,0 +1,135 @@
+---
+title: "SubSprayer - Automated Subdomain Enumeration Tool"
+description: "A comprehensive subdomain enumeration tool I created for recon that combines multiple techniques to discover subdomains and identify live hosts efficiently"
+createdAt: 2024-01-15
+image: "../assets/recon.png"
+tags:
+  - coding
+  - bash
+  - automation
+  - recon
+  - tool
+  - cybersecurity
+  - bugbounty
+draft: false
+---
+
+During reconnaissance, subdomain enumeration is one of the most critical steps. You need to find all the assets and entry points of your target, but running multiple tools manually can be tedious and time-consuming. That's why I created **SubSprayer** - a comprehensive tool that automates the entire subdomain discovery process.
+
+## The Problem
+
+When doing recon on subdomains, you typically need to:
+
+- Run multiple enumeration tools (Subfinder, Sublist3r, Amass, etc.)
+- Check certificate transparency logs
+- Perform brute force DNS enumeration
+- Identify which subdomains are actually live
+- Port scan the discovered hosts
+- Extract useful information like titles and status codes
+
+Doing this manually for each target is inefficient. I needed a solution that would automate all of this.
+
+## What SubSprayer Does
+
+SubSprayer combines multiple enumeration techniques into a single automated workflow:
+
+### Multiple Enumeration Techniques
+
+- **Subfinder** - Fast passive DNS enumeration
+- **Sublist3r** - OSINT-based enumeration
+- **Amass** - Comprehensive active/passive enumeration
+- **Crtsh** - Certificate transparency log search
+- **Gobuster** - DNS brute force with wordlists
+- **GitHub Search** - Discover subdomains mentioned in code repositories
+
+### Live Host Detection
+
+Once subdomains are discovered, SubSprayer automatically:
+
+- Checks which hosts are actually live using **HTTPX**
+- Scans common ports (80, 443, 8080, 8000, 8081, 8008, 8888, 8443, 9000, 9001, 9090)
+- Extracts page titles and HTTP status codes
+- Organizes results in a clean, structured format
+
+## Why I Built It
+
+This was done for recon on subdomains based on trying to discover some assets and with available tools. I wanted something that would:
+
+1. **Save time** - Automate the entire enumeration process
+2. **Be comprehensive** - Use multiple techniques for maximum coverage
+3. **Be organized** - Structure output clearly for easy analysis
+4. **Be easy to use** - Simple command-line interface with sensible defaults
+
+## Usage
+
+### Basic Usage
+
+```bash
+# Single domain enumeration
+./subsprayer.sh -t example.com -w /path/to/wordlist.txt
+
+# Multiple domains from file
+./subsprayer.sh -l domains.txt -w /path/to/wordlist.txt
+
+# With GitHub token for enhanced search
+./subsprayer.sh -t example.com -w /path/to/wordlist.txt -g YOUR_GITHUB_TOKEN
+```
+
+### Output Structure
+
+Results are organized in a clean directory structure:
+
+```
+resultSubsprayer/
+└── domain.com/
+    └── YYYY-MM-DD/
+        ├── all-subdomains.txt      # Combined unique subdomains
+        ├── live-hosts.txt          # Live hosts with HTTP details
+        ├── domain-subfinder.txt    # Subfinder results
+        ├── domain-sublist3r.txt    # Sublist3r results
+        ├── domain-crtsh.txt        # Certificate transparency results
+        ├── domain-gobuster.txt     # Brute force results
+        └── domain-github.txt       # GitHub search results
+```
+
+## Key Features
+
+### Cross-Platform Support
+
+SubSprayer works on:
+- **macOS** (with Homebrew)
+- **Linux** (Debian/Ubuntu and Arch)
+
+The installation script automatically detects your system and installs all required dependencies.
+
+### Easy Installation
+
+A single installation script handles everything:
+
+```bash
+chmod +x install.sh
+./install.sh
+```
+
+This installs all required tools, downloads wordlists, and configures your environment.
+
+### Comprehensive Tool Suite
+
+SubSprayer integrates:
+- **Subfinder** - Fast passive enumeration
+- **Sublist3r** - OSINT gathering
+- **Amass** - Active and passive enumeration
+- **Crtsh** - Certificate transparency logs
+- **Gobuster** - DNS brute forcing
+- **HTTPX** - Live host detection and probing
+
+## GitHub Repository
+
+The tool is open source and available on GitHub:
+
+🔗 **[github.com/solidshadw/subsprayer](https://github.com/solidshadw/subsprayer)**
+
+You can clone it, customize it, and contribute improvements. It's designed to be modular, so you can easily add new enumeration techniques or modify existing ones.
+
+*Automate the boring stuff, focus on finding vulnerabilities.*
+
