@@ -173,10 +173,9 @@ ol li a.active {
   flex-direction: column;
   gap: .5rem;
   position: absolute;
-  top: 50%;
+  bottom: 1.5rem;
   left: 1.5rem;
   right: 1.5rem;
-  transform: translateY(-50%);
   max-width: none;
   z-index: 2;
 }
@@ -210,10 +209,8 @@ ol li a.active {
 @media screen and (max-width: 640px) {
   .header {
     position: relative;
-    top: auto;
+    bottom: 0;
     left: 0;
-    right: auto;
-    transform: none;
     width: fit-content;
     max-width: none;
     margin-top: 1rem;
@@ -240,33 +237,53 @@ code:not(.astro-code code) {
   font-size: .925rem;
 }
 
+/* ============================================
+   HEADER IMAGE SETTINGS - Easy to tweak!
+   ============================================
+   
+   To move image UP/DOWN: Change margin-top
+   - Negative values (like -2rem) move it UP
+   - Positive values move it DOWN
+   
+   To center the visible portion: Change object-position
+   - "center top" = shows top portion
+   - "center center" = shows middle portion  
+   - "center bottom" = shows bottom portion
+   - "center 30%" = shows 30% from top (custom position)
+   
+   To make bigger/smaller: Change max-height
+   - Larger number = taller image
+   - Smaller number = shorter image
+   
+   ============================================ */
+
 .article-header .glow-image {
   width: 100%;
   display: block;
-  margin: 0;
+  margin: -1rem 0 0 0;  /* 👈 Move image UP/DOWN here */
   position: relative;
   overflow: hidden;
-  max-height: 350px;
+  max-height: 400px;  /* 👈 Make image BIGGER/SMALLER here */
 }
 
 .article-header .glow-image img {
   width: 100% !important;
   max-width: none !important;
   height: auto !important;
-  max-height: 350px;
+  max-height: 400px;  /* 👈 Match the max-height above */
   display: block;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 40%;  /* 👈 CENTER the visible portion here (40% from top) */
   overflow: hidden;
 }
 
 .article-header .glow-image .glow {
   width: 100% !important;
   max-width: none !important;
-  max-height: 350px;
+  max-height: 400px;  /* 👈 Match the max-height above */
   height: auto !important;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 40%;  /* 👈 Match object-position above */
 }
 
 .article-image {
@@ -355,15 +372,17 @@ article img:not(p img) {
   }
   
   .article-header .glow-image {
-    max-height: 300px;
+    max-height: 350px;  /* 👈 Tablet size */
   }
   
   .article-header .glow-image img {
-    max-height: 300px;
+    max-height: 350px;
+    object-position: center 40%;  /* 👈 Match desktop position */
   }
   
   .article-header .glow-image .glow {
-    max-height: 300px;
+    max-height: 350px;
+    object-position: center 40%;
   }
 }
 
@@ -384,15 +403,17 @@ article img:not(p img) {
   }
   
   .article-header .glow-image {
-    max-height: 250px;
+    max-height: 300px;  /* 👈 Mobile size */
   }
   
   .article-header .glow-image img {
-    max-height: 250px;
+    max-height: 300px;
+    object-position: center 40%;
   }
   
   .article-header .glow-image .glow {
-    max-height: 250px;
+    max-height: 300px;
+    object-position: center 40%;
   }
   
   article h2 {
@@ -422,15 +443,17 @@ article img:not(p img) {
   }
   
   .article-header .glow-image {
-    max-height: 200px;
+    max-height: 250px;  /* 👈 Small mobile size */
   }
   
   .article-header .glow-image img {
-    max-height: 200px;
+    max-height: 250px;
+    object-position: center 40%;
   }
   
   .article-header .glow-image .glow {
-    max-height: 200px;
+    max-height: 250px;
+    object-position: center 40%;
   }
   
   article h2 {
