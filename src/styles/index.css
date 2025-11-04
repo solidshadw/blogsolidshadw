@@ -87,3 +87,11 @@
   gap: .75rem;
   align-items: center;
 }
+
+/* Profile picture - ensure crisp rendering for pixel art */
+.flex-col-card .profile-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}

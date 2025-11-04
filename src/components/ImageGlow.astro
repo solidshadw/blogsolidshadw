@@ -24,18 +24,20 @@ const height = props.height;
 <style>
   .glow-image {
     position: relative;
-    width: 100%;
-    display: block;
+    display: inline-block;
   }
 
   .glow-image img {
     position: relative;
     z-index: 1;
-    width: 100%;
-    height: auto;
+    width: auto !important;
+    height: auto !important;
+    max-width: none !important;
     display: block;
+    image-rendering: -moz-crisp-edges;
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
+    image-rendering: pixelated;
   }
 
   .glow {
@@ -46,5 +48,9 @@ const height = props.height;
     filter: blur(8px);
     width: 100% !important;
     height: auto !important;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
   }
 </style>

@@ -1,0 +1,62 @@
+---
+interface Props {
+  alt: string;
+  width?: number;
+  height?: number;
+}
+
+const { alt, width = 30, height = 30 } = Astro.props;
+---
+
+<div class="profile-image-container">
+  <img 
+    src="/mike.jpg" 
+    width={width} 
+    height={height}
+    alt={alt}
+    loading="eager"
+    class="profile-image"
+  />
+  <img 
+    src="/mike.jpg" 
+    width={width} 
+    height={height}
+    alt=""
+    class="profile-image-glow"
+    aria-hidden="true"
+  />
+</div>
+
+<style>
+  .profile-image-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .profile-image {
+    position: relative;
+    z-index: 1;
+    display: block;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+    width: auto !important;
+    height: auto !important;
+    max-width: 100%;
+  }
+
+  .profile-image-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    filter: blur(8px);
+    opacity: 0.6;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+  }
+</style>
+
