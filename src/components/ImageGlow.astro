@@ -54,3 +54,25 @@ const height = props.height;
     image-rendering: pixelated;
   }
 </style>
+
+<style is:global>
+  /* Force article header images to be full width - global scope to override component styles */
+  .article-header .glow-image {
+    width: 100% !important;
+    display: block !important;
+    max-width: none !important;
+  }
+  
+  .article-header .glow-image img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: none !important;
+    min-width: 100% !important;
+  }
+  
+  .article-header .glow-image .glow {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 100% !important;
+  }
+</style>

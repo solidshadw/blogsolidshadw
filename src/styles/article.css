@@ -258,8 +258,8 @@ code:not(.astro-code code) {
    ============================================ */
 
 .article-header .glow-image {
-  width: 100%;
-  display: block;
+  width: 100% !important;
+  display: block !important;
   margin: -1rem 0 0 0;  /* 👈 Move image UP/DOWN here */
   position: relative;
   overflow: hidden;
@@ -271,7 +271,7 @@ code:not(.astro-code code) {
   max-width: none !important;
   height: auto !important;
   max-height: 500px;  /* 👈 Match the max-height above */
-  display: block;
+  display: block !important;
   object-fit: cover;
   object-position: center 40%;  /* 👈 CENTER the visible portion here (40% from top) */
   overflow: hidden;
@@ -372,15 +372,21 @@ article img:not(p img) {
   }
   
   .article-header .glow-image {
+    width: 100% !important;
+    display: block !important;
     max-height: 350px;  /* 👈 Tablet size */
   }
   
   .article-header .glow-image img {
+    width: 100% !important;
+    max-width: none !important;
     max-height: 350px;
     object-position: center 40%;  /* 👈 Match desktop position */
   }
   
   .article-header .glow-image .glow {
+    width: 100% !important;
+    max-width: none !important;
     max-height: 350px;
     object-position: center 40%;
   }
@@ -403,15 +409,21 @@ article img:not(p img) {
   }
   
   .article-header .glow-image {
+    width: 100% !important;
+    display: block !important;
     max-height: 300px;  /* 👈 Mobile size */
   }
   
   .article-header .glow-image img {
+    width: 100% !important;
+    max-width: none !important;
     max-height: 300px;
     object-position: center 40%;
   }
   
   .article-header .glow-image .glow {
+    width: 100% !important;
+    max-width: none !important;
     max-height: 300px;
     object-position: center 40%;
   }
@@ -443,15 +455,21 @@ article img:not(p img) {
   }
   
   .article-header .glow-image {
+    width: 100% !important;
+    display: block !important;
     max-height: 250px;  /* 👈 Small mobile size */
   }
   
   .article-header .glow-image img {
+    width: 100% !important;
+    max-width: none !important;
     max-height: 250px;
     object-position: center 40%;
   }
   
   .article-header .glow-image .glow {
+    width: 100% !important;
+    max-width: none !important;
     max-height: 250px;
     object-position: center 40%;
   }

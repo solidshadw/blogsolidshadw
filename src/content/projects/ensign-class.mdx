@@ -1,0 +1,83 @@
+---
+title: "Ensign IT Class Environment"
+description: "A comprehensive cybersecurity lab environment built with Proxmox, Terraform, Caldera, and Wazuh SIEM for hands-on SOC training"
+date: 2024-04-29
+image: "../assets/purpleTeaming.png"
+link: "https://github.com/solidshadw/IT429/tree/main/terraform/classEnvironment"
+info:
+  - text: "GitHub Repository"
+    icon:
+      type: "simple-icons"
+      name: "github"
+    link: "https://github.com/solidshadw/IT429/tree/main/terraform/classEnvironment"
+  - text: "Proxmox"
+    icon:
+      type: "simple-icons"
+      name: "proxmox"
+  - text: "Terraform"
+    icon:
+      type: "simple-icons"
+      name: "terraform"
+  - text: "Wazuh SIEM"
+    icon:
+      type: "lucide"
+      name: "shield"
+---
+
+Built a complete cybersecurity training environment for Ensign IT class using infrastructure-as-code principles. The environment provides students with hands-on experience in Security Operations Center (SOC) workflows, threat detection, and incident response.
+
+## Infrastructure Overview
+
+The lab environment is fully automated using **Terraform** to provision and manage virtual machines on **Proxmox**. This infrastructure-as-code approach ensures consistent, reproducible environments that can be quickly deployed or destroyed.
+
+## Key Components
+
+### Proxmox Hypervisor
+- Base virtualization platform for hosting all lab VMs
+- Enables resource isolation and efficient resource management
+- Supports rapid provisioning and scaling of student environments
+- Required for running the Terraform automation
+
+### Terraform Automation
+- Infrastructure-as-code for automated provisioning
+- Version-controlled infrastructure definitions
+- Consistent environment deployment across multiple students
+
+### MITRE Caldera
+- Adversary emulation platform for red team exercises
+- Simulates real-world attack scenarios
+- Allows students to practice detection and response techniques
+
+### Wazuh SIEM
+- Open-source Security Information and Event Management platform
+- Real-time log analysis and threat detection
+- Provides students with hands-on SIEM experience
+- Security monitoring and alerting capabilities
+- Wazuh agents installed on vulnerable VMs for centralized monitoring
+
+### Vulnerable Active Directory Environment([GOAD](https://orange-cyberdefense.github.io/GOAD/labs/GOAD-Light/))
+- Vulnerable Windows environment for hands-on training
+- Based on the **GOAD (Game of Active Directory)** project, which provides a vulnerable Active Directory lab
+- Students practice real-world AD attacks and defensive monitoring
+- Includes common misconfigurations for adversary simulation
+- Used for teaching lateral movement, privilege escalation, and domain persistence
+- Pre-configured with security vulnerabilities for testing
+- Integrated with Wazuh agents for SIEM monitoring
+
+### Ansible Automation
+- Configuration management and deployment automation
+- Handles post-provisioning setup and configuration
+- Installs and configures Wazuh agents across the environment
+
+## Purpose
+
+This environment enables students to:
+- Practice SOC analyst workflows in a safe, controlled lab
+- Learn SIEM operations using Wazuh for log analysis and monitoring
+- Understand threat detection and incident response
+- Work with vulnerable environments (bytekingdom-light) for hands-on security testing
+- Experience infrastructure automation with Terraform and Ansible
+
+The entire setup is available on GitHub, making it easy for other educators to deploy similar training environments.
+
+🔗 **[View on GitHub](https://github.com/solidshadw/IT429/tree/main/terraform/classEnvironment)**
