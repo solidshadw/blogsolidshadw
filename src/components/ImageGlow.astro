@@ -4,20 +4,19 @@ import type { LocalImageProps, RemoteImageProps } from 'astro:assets';
 
 type Props = LocalImageProps | RemoteImageProps;
 
-const { ...props } = Astro.props;
+const { class: className, ...props } = Astro.props;
 
 const width = props.width;
 const height = props.height;
 ---
 
-<div class="glow-image">
+<div class:list={['glow-image', className]}>
   <Image {...props} />
   <Image
     width={width ? ((typeof width === 'number' ? width : Number.parseInt(width)) / 4) : undefined} 
     height={height ? ((typeof height === 'number' ? height : Number.parseInt(height)) / 4) : undefined}
     {...props}
     class='glow'
-    class:list={[props.class]}
     quality={75}
   />
 </div>
@@ -34,6 +33,20 @@ const height = props.height;
     width: 100%;
     height: auto;
     display: block;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+
+  /* Profile picture specific styling - prevents stretching */
+  .glow-image.profile-picture {
+    width: auto;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .glow-image.profile-picture img {
+    width: auto;
+    max-width: 100%;
   }
 
   .glow {
