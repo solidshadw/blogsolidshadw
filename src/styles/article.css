@@ -282,7 +282,7 @@ code:not(.astro-code code) {
   max-width: none !important;
   max-height: 500px;  /* 👈 Match the max-height above */
   height: auto !important;
-  object-fit: cover;
+  object-fit: cover;  
   object-position: center 40%;  /* 👈 Match object-position above */
 }
 
